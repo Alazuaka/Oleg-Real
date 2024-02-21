@@ -1,0 +1,45 @@
+mixin use(id)
+  use(xlink:href=`images/sprite.svg#${id}`)
+
+mixin cardPost(post)
+  .post__top
+    img.post__image.img(src=`${post.imgUrl}`, alt=`${post.name}`)
+  .post__bottom
+    a.link.post__title(src=`${post.link}`) !{`${post.name}`}
+    p.post__descr.descr !{`${post.descr}`}
+
+mixin product(product)
+  .product__top
+    span.product__rating.rating
+      svg.rating__star
+        +use('star')
+      span.rating__number #{product.rating}
+    img.product__image.img(src=`${product.imgUrl}`, alt=`${product.name}`)
+  .product__bottom
+    a.link.product__title(href=`${MAIN_HOST}/${product.link}.html`)
+      span.product__name #{`${product.name}`}
+      span.product__code !{`&laquo;${product.code}&raquo;`}
+    span.product__price.price
+      span.price__price !{`${product.price}&nbsp;руб`}
+    button.product__btn.btn Купить
+
+mixin checkbox(text,bemEl="", id)
+  label(class=`${(bemEl)? bemEl + '__checkbox ': ''}checkbox`)
+    if id
+      input.checkbox__input(type="checkbox",id=`${id}`)
+    else
+      input.checkbox__input(type="checkbox")
+    span.checkbox__check.checkbox-check
+    span.checkbox__texts !{`${text}`}
+
+mixin breadcrumps(breadcrumps, bemEl)
+  if bemEl
+    ul(class=`${bemEl}__breadcrumps breadcrumps list-reset`)
+     each path in breadcrumps
+        li.breadcrumps__item
+          a.breadcrumps__link.link(href=`${path.link}`) !{path.name}
+  else
+    ul.breadcrumps.list-reset
+      each path in breadcrumps
+        li.breadcrumps__item
+          a.breadcrumps__link.link(href=`${path.link}`) !{path.name}

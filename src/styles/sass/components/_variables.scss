@@ -1,0 +1,25 @@
+:root {
+  --color-white: #fff;
+  --color-accent: #008bd2;
+  --color-accent-1: #3172B9;
+  --color-accent-2: #0E3B6C;
+  --color-disable: #C4C4C4;
+  --color-blame: #f0f0f0;
+
+
+  --color-grey: #999;
+  --color-grey-shade: #666;
+  --color-black: #333;
+  --padding-container: 36px;
+}
+
+@media (max-width: 840px) {
+  :root {
+    --padding-container: 70px;
+  }
+}
+@media (max-width: 720px) {
+  :root {
+    --padding-container: 12px;
+  }
+}

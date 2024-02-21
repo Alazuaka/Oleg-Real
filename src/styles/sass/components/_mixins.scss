@@ -1,0 +1,14 @@
+@mixin container {
+  margin: 0 auto;
+  max-width: calc(1279px + (var(--padding-container) * 2));
+  padding-left: var(--padding-container);
+  padding-right: var(--padding-container);
+}
+
+
+@mixin font-opensans {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+@mixin font-playfair {
+  font-family: 'Playfair Display', Helvetica, sans-serif;
+}

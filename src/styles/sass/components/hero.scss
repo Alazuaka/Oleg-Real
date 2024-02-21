@@ -1,0 +1,21 @@
+.hero {
+  position: relative;
+  padding: 150px 0;
+  background-image: url('../images/hero.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 100%;
+  &__container {
+  }
+  &__title {
+    color: var(--color-accent);
+    text-shadow: 4px 4px 4px var(--color-white);
+    font-weight: 500;
+    font-size: 50px;
+    max-width: 700px;
+  }
+  &__descr {
+    max-width: 900px;
+    line-height: 1.5;
+  }
+}

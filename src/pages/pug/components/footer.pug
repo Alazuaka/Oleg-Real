@@ -1,0 +1,26 @@
+
+-var footerList= [{name: 'О нас', id: '#'},{name: 'О компании', id: '#'},{name: 'Контакты', id: '#'},{name: 'Поставщикам', id: '#'},{name: 'Сотрудничество', id: 'cooperation'}];
+footer.footer#footer
+  .footer__container.container
+    .footer__left
+      a.footer__logo-link.link(href="#")
+        img.footer__logo.logo(src="images/logo.svg" alt="Логотип")
+      ul.list-reset.footer__social-list
+        li.footer__social-item
+          a.footer__link.link(href="")
+            svg.footer__social-icon.icon
+              +use('ok')
+        li.footer__social-item
+          a.footer__link.link(href="")
+            svg.footer__social-icon.icon
+              +use('vk')
+        li.footer__social-item
+          a.footer__link.link(href="")
+            svg.footer__social-icon.icon
+              +use('telegram')
+    ul.list-reset.footer__right
+      li.footer__menu-item
+          each item in footerList
+            li.sublist__item
+              a.sublist__link.link(href=`${MAIN_HOST}/${item.id}.html`)= item.name
+.footer__copyright Копирайт<sup class="reg">&reg;</sup> 2011-2021
