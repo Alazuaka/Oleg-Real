@@ -56,23 +56,51 @@ img {
 }
 
 .link {
+  display: inline-block;
   text-decoration: none;
   border: none;
   color: inherit;
-  outline-offset: 5px;
+  outline: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+
+
+  &:hover {
+    color: var(--color-accent-2);
+  }
+
+  &:focus {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+  }
+
+  &:active {
+    color: var(--color-accent-2);
+    border-color: var(--color-accent-2);
+  }
+}
+
+.icon-link {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  color: inherit;
+  outline: none;
   background: none;
   transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
 
   &:hover {
-    color: var(--color-primary);
+    color: var(--color-accent);
   }
+
   &:focus {
-    color: var(--color-primary);
-    background-color: var(--color-primary-pink);
+    background-color: var(--color-accent);
+    color: var(--color-white);
   }
+
   &:active {
-    color: var(--color-primary-dark);
-    background-color: transparent;
+    background-color: var(--color-accent-2);
   }
 }
 

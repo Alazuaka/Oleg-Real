@@ -5,6 +5,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    gap: 100px;
   }
 
   &__logo-link {}
@@ -22,25 +23,17 @@
     height: 36px;
   }
 
-  &__link {
+  &__icon-link {
     color: var(--color-grey);
     display: block;
     padding: 3px;
     max-height: 100%;
     max-width: 100%;
-
-    &:hover {
-      color: var(--color-primary);
-    }
-
+  }
+  &__link {
     &:focus {
-      color: var(--color-white);
-      background-color: var(--color-primary-light);
-    }
-
-    &:active {
-      color: var(--color-primary-dark);
-      background-color: transparent;
+      color: var(--color-accent);
+      border-bottom: 2px solid var(--color-accent);
     }
   }
 
@@ -54,7 +47,8 @@
   &__right {
     color: var(--color-white);
     display: flex;
-    // justify-content: space-between;
+    flex-grow: 1;
+    justify-content: space-between;
     gap: 40px;
     align-items: center;
   }
@@ -72,7 +66,9 @@
 @media (max-width: 1230px) {
   .footer {
     &__right {
-      gap: 71px;
+      flex-grow: 1;
+      gap: 1px;
+      justify-content: space-between;
     }
   }
 }
@@ -91,8 +87,9 @@
 
     &__right {
       padding: 0;
-      gap: 15px;
+      gap: 1px;
       justify-content: space-between;
+
     }
   }
 }
@@ -111,6 +108,7 @@
     &__right {
       grid-template-columns: repeat(2, auto);
       justify-content: center;
+      flex-wrap: wrap;
       gap: 24px;
     }
 

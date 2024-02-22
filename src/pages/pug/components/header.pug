@@ -3,22 +3,20 @@
 
 header.header#header
   .header__container.container
-    .header__top
-      a.header__logo-link.link(href=`${MAIN_HOST}`)
-        img.header__logo.logo(src="images/logo.svg" alt="Логотип")
+    a.header__logo-link.link(href=`${MAIN_HOST}`)
+      img.header__logo.logo(src="images/logo.svg" alt="Логотип")
+    button.header__burger.burger.btn-mini
+        span.burger__line.line-1
+        span.burger__line.line-2
+        span.burger__line.line-3
+    .header__menu
       nav.header__nav.nav
         ul.list-reset.nav__list
           each i in navList
             li.nav__item
               a.nav__link.link(href=`${MAIN_HOST}/${i.id}.html`) !{i.name}
-      button.header__burger.burger.btn-mini
-        span.burger__line.line-1
-        span.burger__line.line-2
-        span.burger__line.line-3
       .header__phone.phone
         a.phone__link.link(href="tel:+74958854547")
           svg.phone__icon.icon
             +use('phone')
           span.phon__number +7 (495) 885-45-47
-    .header__buttom.visually-hidden
-      h1.header__title.visually-hidden Ремонт промыщленной техники и электроники
