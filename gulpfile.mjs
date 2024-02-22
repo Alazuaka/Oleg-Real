@@ -31,12 +31,12 @@ export const activeProde = (cb) => {
 }
 
 export const clean = () => {
-  return del(['dist'])
+  return del(['docs'])
 }
 
 export const buildFont = () => {
 return src('src/fonts/**/*')
-.pipe(dest('dist/fonts'))
+.pipe(dest('docs/fonts'))
 }
 
 export const buildHtml = () => {
@@ -44,7 +44,7 @@ export const buildHtml = () => {
     .pipe(
       gulpPug()
     )
-    .pipe(dest('./dist'))
+    .pipe(dest('./docs'))
     .pipe(browserSynk.stream());
 }
 
@@ -60,7 +60,7 @@ export const buildStyles = () => {
     //   level: 2
     // })))
     .pipe(gulpIf(!prodTogle, sourcemaps.write()))
-    .pipe(dest('dist/style'))
+    .pipe(dest('docs/style'))
     .pipe(browserSynk.stream())
 };
 
@@ -73,7 +73,7 @@ export const buildSvgSprite = () => {
   }
   return src(['src/images/svg/**/*.svg'])
     .pipe(svgSprite(config))
-    .pipe(dest('dist/images'))
+    .pipe(dest('docs/images'))
 }
 
 export const buildImages = () => {
@@ -84,7 +84,7 @@ export const buildImages = () => {
     'src/images/*.svg',
   ])
     .pipe(image())
-    .pipe(dest('dist/images'))
+    .pipe(dest('docs/images'))
 }
 
 const buildWebps = () => {
@@ -94,7 +94,7 @@ const buildWebps = () => {
     'src/images/**/*.png',
   ])
     .pipe(webp())
-    .pipe(dest('dist/images'))
+    .pipe(dest('docs/images'))
 }
 
 export const scripts = () => {
@@ -110,7 +110,7 @@ export const scripts = () => {
     .pipe(concat('app.js'))
     .pipe(gulpIf(!prodTogle, uglify().on('error', notify.onError())))
     .pipe(gulpIf(!prodTogle, sourcemaps.write()))
-    .pipe(dest('dist/js'))
+    .pipe(dest('docs/js'))
     .pipe(browserSynk.stream())
 }
 
@@ -119,7 +119,7 @@ export const scripts = () => {
 export const watchFiles = () => {
   browserSynk.init({
     server: {
-      baseDir: 'dist'
+      baseDir: 'docs'
     }
   })
 }
